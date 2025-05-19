@@ -16,8 +16,6 @@ jobs:
    - name: Execução de teste
      working-directory: ./review-filmes/src/Review-Filmes.Test.Unit
      run: dotnet test
-   - run: echo "Usuário" ${{ vars.DOCKERHUB_USERNAME }}
-   - run: echo "Password" ${{ secrets.DOCKERHUB_TOKEN }}
    - name: Login no Docker Hub
      uses: docker/login-action@v3
      with:
