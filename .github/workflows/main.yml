@@ -14,7 +14,7 @@ jobs:
      with:
       dotnet-version: 8.x
    - name: Execução de teste
-     working-directory: ./review-filmes\src\Review-Filmes.Test.Unit
+     working-directory: ./review-filmes/src/Review-Filmes.Test.Unit
      run: dotnet test
    - name: Login no Docker Hub
      uses: docker/login-action@v3
@@ -29,9 +29,9 @@ jobs:
        owftecnologia/review-filmes:v${{ github.run_number }}
        owftecnologia/review-filmes:latest
       # Contexto
-      context: ./review-filmes\src
+      context: ./review-filmes/src
       # Dockerfile
-      file: ./review-filmes\src\Review-Filmes.Web\Dockerfile
+      file: ./review-filmes/src/Review-Filmes.Web/Dockerfile
       push: true
  cd:
   needs: [ci]
